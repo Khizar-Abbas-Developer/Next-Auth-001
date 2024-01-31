@@ -5,7 +5,7 @@ import Joi from "joi";
 import User, { loginValidate } from "@/models/user";
 import Token from "@/models/token";
 import bcrypt from "bcrypt";
-import sendEmail from "@/utils/sendEmail";
+import sendEmail from "@/libs/utils/sendEmail";
 import crypto from "crypto";
 
 export const AuthenticateUser = async (prevState, data) => {

@@ -16,7 +16,6 @@ const userSchema = new Schema(
         },
         password: {
             type: String,
-            required: true,
         },
         verified: {
             type: Boolean,
@@ -51,21 +50,5 @@ try {
     User = model('User', userSchema);
 }
 
-const validate = (data) => {
-    const schema = Joi.object({
-        username: Joi.string().required().label("Username"),
-        email: Joi.string().email().required().label("Email"),
-        password: passwordComplexity().required().label("Password"),
-        image: Joi.string().allow("").optional().label("image"),
-    });
-    return schema.validate(data);
-};
-const loginValidate = (data) => {
-    const schema = Joi.object({
-        email: Joi.string().email().required().label("Email"),
-        password: Joi.string().required().label("Password"),
-    });
-    return schema.validate(data);
-};
+
 export default User;
-export { validate, loginValidate };

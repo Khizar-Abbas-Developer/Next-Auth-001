@@ -13,6 +13,7 @@ import { useDispatch } from "react-redux";
 import SignUpButton from "@/components/SubmitButton/SubmitButton";
 import { AuthenticateUser } from "./_action";
 import { signInFailure, signInStart, signInSuccess } from "@/redux/userSlice";
+import SigninButton from "@/components/SigninButton/SigninButton";
 
 const LoginPage = () => {
   const formRef = useRef(null);
@@ -106,6 +107,7 @@ const LoginPage = () => {
               Signup
             </Link>
           </p>
+          <SigninButton />
         </div>
       </div>
     </>

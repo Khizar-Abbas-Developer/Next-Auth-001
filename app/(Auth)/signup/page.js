@@ -1,5 +1,5 @@
 "use client"
-import { ImagetoBase64 } from '@/utils/ImagetoBase64';
+import { ImagetoBase64 } from '@/libs/utils/ImagetoBase64';
 import { set } from 'mongoose';
 import Image from 'next/image';
 import { useFormState } from "react-dom";
@@ -11,6 +11,7 @@ import { createUser } from '@/app/(Auth)/signup/_action';
 import toast from 'react-hot-toast';
 import { MoonLoader } from 'react-spinners';
 import SignUpButton from "@/components/SubmitButton/SubmitButton";
+import SigninButton from '@/components/SigninButton/SigninButton';
 const SignupForm = () => {
   const formRef = useRef(null);
   const [msg, setMsg] = useState("");
@@ -133,6 +134,7 @@ const SignupForm = () => {
               Login
             </Link>
           </p>
+          <SigninButton />
         </div>
       </div>
     </>

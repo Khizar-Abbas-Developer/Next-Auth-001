@@ -3,7 +3,7 @@
 import connectMongoDB from "@/libs/mongodb";
 import Token from "@/models/token";
 import User from "@/models/user";
-import sendEmail from "@/utils/sendEmail";
+import sendEmail from "@/libs/utils/sendEmail";
 import crypto from "crypto";
 import Joi from "joi";
 

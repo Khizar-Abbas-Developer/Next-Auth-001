@@ -4,7 +4,7 @@ import connectMongoDB from "@/libs/mongodb";
 import Token from "@/models/token";
 import bcrypt from "bcrypt";
 import crypto from "crypto";
-import sendEmail from "@/utils/sendEmail";
+import sendEmail from "@/libs/utils/sendEmail";
 
 //
 const sendVerificationEmail = async (user) => {
@@ -22,9 +22,8 @@ export const createUser = async (prevState, data) => {
     const email = data.get('email');
     const password = data.get('password');
     const confirmpassword = data.get("confirmpassword");
+    await connectMongoDB();
     try {
-        await connectMongoDB();
-
         const { error } = validate({ username, email, password });
         if (error) {
             const errorMessage = error.details.map((detail) => detail.message).join(', ');
@@ -46,7 +45,7 @@ export const createUser = async (prevState, data) => {
 
         return { message: `Verification link send to ${newUser.email}`, status: 201 }
     } catch (error) {
-    console.error(error);
-    return { message: "Internal Server Error", status: 500 };
-}
+        console.error(error);
+        return { message: "Internal Server Error", status: 500 };
+    }
 };
