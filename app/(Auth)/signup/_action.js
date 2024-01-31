@@ -1,5 +1,6 @@
 "use server"
-import User, { validate } from "@/models/user";
+import User from "@/models/user";
+import { validate } from "@/libs/utils/validations";
 import connectMongoDB from "@/libs/mongodb";
 import Token from "@/models/token";
 import bcrypt from "bcrypt";

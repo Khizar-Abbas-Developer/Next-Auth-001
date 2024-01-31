@@ -37,7 +37,7 @@ const SigninButton = () => {
                 } else if (response.status === 201) {
                     dispatch(signInSuccess(response.data));
                     setLoading(false)
-                    window.location.href = `/set-password/${response.id}`;
+                    window.location.href = "/"
                 } else if (response.status === 400) {
                     toast.error(response.message)
                     setLoading(false)

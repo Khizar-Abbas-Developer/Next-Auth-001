@@ -2,7 +2,7 @@
 
 import connectMongoDB from "@/libs/mongodb";
 import Joi from "joi";
-import User, { loginValidate } from "@/models/user";
+import User from "@/models/user";
 import Token from "@/models/token";
 import bcrypt from "bcrypt";
 import sendEmail from "@/libs/utils/sendEmail";
@@ -13,11 +13,6 @@ export const AuthenticateUser = async (prevState, data) => {
     const password = data.get('password');
     await connectMongoDB();
     try {
-        const { error } = loginValidate({ email, password });
-        if (error) {
-            const errorMessage = error.details.map((detail) => detail.message).join(', ');
-            return { message: errorMessage, status: 400 };
-        }
         const user = await User.findOne({ email });
         if (!user || !(await bcrypt.compare(password, user.password))) {
             return {message: "Invalid Email or Password", status: 400}

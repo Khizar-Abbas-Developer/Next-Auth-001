@@ -18,12 +18,5 @@ const validate2 = (data) => {
     });
     return schema.validate(data);
 };
-const loginValidate = (data) => {
-    const schema = Joi.object({
-        email: Joi.string().email().required().label("Email"),
-        password: Joi.string().required().label("Password"),
-    });
-    return schema.validate(data);
-};
 
-export { validate, loginValidate, validate2 };
+export { validate, validate2 };
