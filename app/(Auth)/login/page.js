@@ -63,7 +63,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="p-3 bg-slate-100 min-h-[calc(100vh)] pt-40">
+      <div className="p-3 bg-slate-400 min-h-[calc(100vh)] pt-40">
         <div className="w-full max-w-sm bg-white m-auto flex items-center flex-col p-4 shadow-xl rounded-md">
           <div variant={"success"} className="bg-green-300 w-full h-full text-center font-bold">{msg ? msg : ""}</div>
           <h3 className="text-center text-3xl md:text-4xl font-bold">Login</h3>
