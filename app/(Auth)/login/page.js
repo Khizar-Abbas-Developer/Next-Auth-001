@@ -1,8 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-
-import Image from "next/image";
-import loginSignUpImage from "@/public/1.gif"
 import Link from "next/link";
 import { BiShow, BiHide } from "react-icons/bi";
 import { useEffect, useRef, useState } from "react";
@@ -63,10 +60,10 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="p-3 bg-slate-100 min-h-[calc(100vh)] pt-40">
+      <div className="p-3 bg-slate-100 min-h-[calc(90vh)] pt-40">
         <div className="w-full max-w-sm bg-white m-auto flex items-center flex-col p-4 shadow-xl rounded-md">
           <div variant={"success"} className="bg-green-300 w-full h-full text-center font-bold">{msg ? msg : ""}</div>
-          <h3 className="text-center text-3xl md:text-4xl font-bold">Login</h3>
+          <h1 className="text-center text-3xl md:text-4xl font-bold">Login</h1>
           <form
             className="w-full py-3 flex flex-col"
             action={async (formData) => {
@@ -107,7 +104,9 @@ const LoginPage = () => {
               Signup
             </Link>
           </p>
-          <SigninButton />
+          <div className="mt-2">
+            <SigninButton />
+          </div>
         </div>
       </div>
     </>

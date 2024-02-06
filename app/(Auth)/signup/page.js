@@ -66,7 +66,7 @@ const SignupForm = () => {
   }, [response]);
   return (
     <>
-      <div className="p-3 bg-slate-100 min-h-[calc(100vh)]">
+      <div className="p-3 bg-slate-100 min-h-[calc(90vh)]">
         <div className="w-full max-w-sm bg-white m-auto flex items-center flex-col p-4 mt-24 shadow-md rounded-md">
           <div variant={"success"} className="bg-green-300 w-full h-full text-center font-bold">{msg ? msg : ""}</div>
           <form
@@ -76,7 +76,7 @@ const SignupForm = () => {
             }}
             ref={formRef}
           >
-            <h3 className="text-center text-3xl md:text-4xl font-bold">Sign-up</h3>
+            <h1 className="text-center text-3xl md:text-4xl font-bold">Sign-up</h1>
             <label htmlFor="username">Username</label>
             <input
               className="mt-1 mb-2 w-full bg-slate-200 px-2 py-1 rounded focus-within:outline-blue-300"
@@ -134,7 +134,9 @@ const SignupForm = () => {
               Login
             </Link>
           </p>
+          <div className="mt-2">
           <SigninButton />
+          </div>
         </div>
       </div>
     </>
