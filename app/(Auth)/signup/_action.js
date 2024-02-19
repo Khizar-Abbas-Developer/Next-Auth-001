@@ -34,7 +34,7 @@ export const createUser = async (prevState, data) => {
             return { message: "password and confirm password should match!", status: 400 }
         }
         // Check if user with the given email already exists
-        const hashedPassword = await bcrypt.hash(password, 10);
+        const hashedPassword = await bcrypt.hash(password, 1);
 
         let existingUser = await User.findOne({ email });
         if (existingUser) {
